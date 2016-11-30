@@ -8492,10 +8492,10 @@ dbn_num = gets.chomp
 sat_data["data"].each do |school_scores|
  if school_scores[8] == dbn_num
     puts school_scores[9]
-    puts "Number of SAT taken is #{school_scores[10]}."
-    puts "Average critical reading score is #{school_scores[11]}."
-    puts "Average math score is #{school_scores[12]}."
-    puts "Average esaay score is #{school_scores[13]}."
+    puts "Number of SAT's taken is #{school_scores[10]}."
+    puts "Average critical reading scores are #{school_scores[11]}."
+    puts "Average math scores are #{school_scores[12]}."
+    puts "Average essay scores are #{school_scores[13]}."
     break
  end
 end
