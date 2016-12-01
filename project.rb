@@ -8487,15 +8487,55 @@ sat_data = JSON.parse(%q|
    ]
 }
 |)
+# puts "What is the DBN you are looking for?"
+# dbn_num = gets.chomp
+# sat_data["data"].each do |school_dbn|
+# if school_dbn[8] == dbn_num
+#     puts school_scores[9]
+#     puts "Number of SAT's taken is #{school_scores[10]}."
+#     puts "Average critical reading scores are #{school_scores[11]}."
+#     puts "Average math scores are #{school_scores[12]}."
+#     puts "Average essay scores are #{school_scores[13]}."
+#     break
+# end
+# end
+def sat_scores(sat_data, school_code)
+  sat_data["data"].each do |school_info|
+    if school_info[8] == school_code
+      return {sat_school_name: school_info[9], sat_taken: school_info[10], avg_reading: school_info[11], avg_math: school_info[12], avg_essay: school_info[13]}
+    end
+  end
+end
+  def run(sat_data)
 puts "What is the DBN you are looking for?"
 dbn_num = gets.chomp
-sat_data["data"].each do |school_scores|
- if school_scores[8] == dbn_num
-    puts school_scores[9]
-    puts "Number of SAT's taken is #{school_scores[10]}."
-    puts "Average critical reading scores are #{school_scores[11]}."
-    puts "Average math scores are #{school_scores[12]}."
-    puts "Average essay scores are #{school_scores[13]}."
-    break
- end
+  school_info = school_score(sat_data,dbn_num)
+  puts "The school name is #{school_info_score[:sat_school_name]}"
+  puts "Number of SAT taken is #{school_info_score[:sat_taken]}"
+  puts "Average critical reading score is #{school_info_score[:avg_reading]}"
+  puts "Average math score is #{school_info_score[:avg_math]}"
+  puts "Average esaay score is #{school_info_score[:avg_essay]}"
 end
+  run(sat_data)
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
