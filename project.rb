@@ -8501,8 +8501,11 @@ sat_data = JSON.parse(%q|
 # end
 def sat_scores(sat_data, school_code)
   sat_data["data"].each do |school_info|
+     message = "Sorry, the DBN you entered is not right. Hint: All letters are capital."
     if school_info[8] == school_code
       return {sat_school_name: school_info[9], sat_taken: school_info[10], avg_reading: school_info[11], avg_math: school_info[12], avg_essay: school_info[13]}
+   else 
+      return message 
     end
   end
 end
@@ -8516,6 +8519,7 @@ dbn_num = gets.chomp
   puts "Average math score is #{school_info[:avg_math]}"
   puts "Average esaay score is #{school_info[:avg_essay]}"
 end
+
   run(sat_data)
   
   
