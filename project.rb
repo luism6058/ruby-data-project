@@ -8509,12 +8509,12 @@ end
   def run(sat_data)
 puts "What is the DBN you are looking for?"
 dbn_num = gets.chomp
-  school_info = school_score(sat_data,dbn_num)
-  puts "The school name is #{school_info_score[:sat_school_name]}"
-  puts "Number of SAT taken is #{school_info_score[:sat_taken]}"
-  puts "Average critical reading score is #{school_info_score[:avg_reading]}"
-  puts "Average math score is #{school_info_score[:avg_math]}"
-  puts "Average esaay score is #{school_info_score[:avg_essay]}"
+  school_info = sat_scores(sat_data,dbn_num)
+  puts "The school name is #{school_info[:sat_school_name]}"
+  puts "Number of SAT taken is #{school_info[:sat_taken]}"
+  puts "Average critical reading score is #{school_info[:avg_reading]}"
+  puts "Average math score is #{school_info[:avg_math]}"
+  puts "Average esaay score is #{school_info[:avg_essay]}"
 end
   run(sat_data)
   
